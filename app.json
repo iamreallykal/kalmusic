@@ -1,38 +1,52 @@
 {
-  "name": "Aditya Arushi Player",
-  "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
-  "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/Shailendra34/Heromusics",
+  "name": "SolidMusic Bot",
+  "description": "Open Source bot to stream media trough Telegram Voice Chat. Powered by PyTgCalls and Pyrogram",
+  "keywords": ["solidmusic", "musicbot", "video-stream", "videochat", "voicechat", "telegram"],
+  "repository": "https://github.com/DoellBarr/solidmusic",
   "stack": "container",
   "env": {
-    "SESSION_NAME": {
-      "description": "Pyrogram session string",
-      "required": false
-    },
-    "BOT_TOKEN": {
-      "description": "A bot token from @BotFather",
-      "required": false,
-      "value": "2034903666:AAHkds0_T7N-0fXtNufUv-BAcpIrAGb7yIw"
-    },
     "API_ID": {
-      "description": "App ID from my.telegram.org/apps",
-      "required": false,
-      "value": "7691464"
+      "description": "Fill it with your API_ID, get it from my.telegram.org/apps",
+      "required": true
     },
     "API_HASH": {
-      "description": "App hash from my.telegram.org/apps",
-      "required": false,
-      "value": "8b90120161e4628088257361033f9b19"
+      "description": "Fill it with your API_HASH, get it from my.telegram.org/apps",
+      "required": true
     },
-    "SUDO_USERS": {
-      "description": "List of user IDs counted as admin everywhere (separated by space).",
-      "required": false,
-      "value": "1973129294 2023126723 1442442077"
+    "BOT_TOKEN": {
+      "description": "Fill it with your Bot token, get it from @BotFather",
+      "required": true
     },
-    "DURATION_LIMIT": {
-      "description": "Max audio duration limit for downloads (minutes).",
+    "OWNER_ID": {
+      "description": "Fill it with your telegram id, not api id",
+      "required": true
+    },
+    "SESSION": {
+      "description": "Fill it with your assistant session string",
+      "required": true
+    },
+    "SUPPORT": {
+      "description": "your group support link, can use private or public group, example https://t.me/solidprojects_chat",
       "required": false,
-      "value": "60"
+      "value": "https://t.me/solidprojects_chat"
+    },
+    "CHANNEL": {
+      "description": "your channel support link, can use private or public channel, example https://t.me/solidprojects",
+      "required": false,
+      "value": "https://t.me/solidprojects"
+    },
+    "UPSTREAM_REPO": {
+      "description": "fill it if you fork from original repo",
+      "required": false,
+      "value": "https://github.com/DoellBarr/solidmusic"
     }
-  }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
 }
