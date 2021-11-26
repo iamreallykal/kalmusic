@@ -22,9 +22,6 @@
 
 ### Deploy To Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/rakeshyt/DevilHackerMusic)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/iamreallykal/kalmusic)
 
 
-### Deploy To Railway
-
-[![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Shailendra34/Heromusics)
