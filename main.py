@@ -1,7 +1,12 @@
+import requests
 from pyrogram import Client as Bot
-from pyrogram import idle
+
 from callsmusic import run
-from config import API_ID, API_HASH, BOT_TOKEN
+from config import API_ID, API_HASH, BOT_TOKEN, BG_IMAGE
+
+response = requests.get(BG_IMAGE)
+with open("./etc/foreground.png", "wb") as file:
+    file.write(response.content)
 
 
 bot = Bot(
@@ -12,6 +17,7 @@ bot = Bot(
     plugins=dict(root="handlers")
 )
 
+print("[INFO]: YOUR MUSIC BOT STARTED!")
+
 bot.start()
 run()
-idle()
