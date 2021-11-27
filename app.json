@@ -1,52 +1,143 @@
 {
-  "name": "SolidMusic Bot",
-  "description": "Open Source bot to stream media trough Telegram Voice Chat. Powered by PyTgCalls and Pyrogram",
-  "keywords": ["solidmusic", "musicbot", "video-stream", "videochat", "voicechat", "telegram"],
-  "repository": "https://github.com/DoellBarr/solidmusic",
-  "stack": "container",
-  "env": {
-    "API_ID": {
-      "description": "Fill it with your API_ID, get it from my.telegram.org/apps",
-      "required": true
+    "name": "kalmusic",
+    "logo": "https://telegra.ph/file/73cbefa8401982900fe81.jpg",
+    "description": "KennedyX Music allow you to stream music trought the telegram voice chat feature.",
+    "keywords": ["music", "voice chat", "telegram"],
+    "repository": "https://github.com/iamreallykal/kalmusic",
+    "stack": "container",
+    "env": {
+        "SESSION_NAME": {
+            "description": "fill with string Pyogram (P)",
+            "required": true
+        },
+        "ARQ_API_KEY": {
+            "description": "For lyric and quotly modules, get on @ARQRobot",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Your bot token from @BotFather",
+            "required": true
+        },
+        "BOT_NAME": {
+            "description": "Your musicplayer name.",
+            "required": true,
+            "value": ""
+        },
+        "BOT_USERNAME": {
+            "description": "Fill with your bot username without @",
+            "required": true,
+            "value": "exkalbot"
+        },
+        "U_BRANCH": {
+            "description": "This branch the repo DON'T CHANGE!",
+            "required": true,
+            "value": "main"
+        },
+        "HEROKU_API_KEY": {
+            "description": "Your heroku api key get from setting account.",
+            "required": true,
+            "value": ""
+        },
+        "HEROKU_APP_NAME": {
+            "description": "Your heroku app name, get it from top",
+            "required": true,
+            "value": ""
+        },
+        "UPSTREAM_REPO": {
+            "description": "If you forking, put your link on this value. if you not forking LEAVE THIS ONE!",
+            "required": true,
+            "value": "https://github.com/iamreallykal/kalmusic"
+        },
+        "DATABASE_URL": {
+            "description": "Fill with mongodb uri from mongodb.com",
+            "required": true
+        },
+        "OWNER_ID": {
+            "description": "your id",
+            "required": true
+        },
+        "BROADCAST_AS_COPY": {
+            "description": "if you don't know about this leave this on default value",
+            "required": false,
+            "value": "True"
+        },
+        "LOG_CHANNEL": {
+            "description": "Channel for log who's start your bot",
+            "required": true
+        },
+        "OWNER_ID": {
+            "description": "your id",
+            "required": true
+        },
+        "BOT_IMG": {
+            "description": "For alive pic.",
+            "required": false,
+            "value": "https://telegra.ph/file/5f5f8e412644c47cc836a.jpg"
+        },
+        "THUMB_IMG": {
+            "description": "For image on results.",
+            "required": false,
+            "value": "https://telegra.ph/file/510af19ec06191ce5fa42.png"
+        },
+        "ASSISTANT_NAME": {
+            "description": "Fill with your assistant username without @",
+            "required": true,
+            "value": "xxskal"
+        },
+        "BG_IMAGE": {
+            "description": "For background image if you playing",
+            "required": false,
+            "value": "https://telegra.ph/file/3379f1d4a6e61cdea1e5f.png"
+        },
+        "ALIVE_EMOJI": {
+            "description": "for emoji in /alive command",
+            "required": true,
+            "value": ""
+        },
+        "OWNER_NAME": {
+            "description": "Fill with your username account without @",
+            "required": false,
+            "value": "iamreallykal"
+        },
+        "API_ID": {
+            "description": "APP ID from my.telegram.org",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "API HASH from my.telegram.org",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "Fill with ID who you made a admin for bot (separate with space).",
+            "required": true
+        },
+        "DURATION_LIMIT": {
+            "description": "Duration limit for your musicplayer (in minutes).",
+            "required": true,
+            "value": "15"
+        },
+        "PMPERMIT": {
+            "description": "for PMPERMIT on assistant account.",
+            "required": false,
+            "value": "ENABLE"
+        },
+        "UPDATES_CHANNEL": {
+            "description": "Fill with your channel username without @, if you haven't one you can leave it default",
+            "required": false,
+            "value": "happykal"
+        },
+        "GROUP_SUPPORT": {
+            "description": "Fill with your group username without @, if your haven't one you can leave it default",
+            "required": false,
+            "value": "ownkkk"
+        }
     },
-    "API_HASH": {
-      "description": "Fill it with your API_HASH, get it from my.telegram.org/apps",
-      "required": true
+    "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     },
-    "BOT_TOKEN": {
-      "description": "Fill it with your Bot token, get it from @BotFather",
-      "required": true
-    },
-    "OWNER_ID": {
-      "description": "Fill it with your telegram id, not api id",
-      "required": true
-    },
-    "SESSION": {
-      "description": "Fill it with your assistant session string",
-      "required": true
-    },
-    "SUPPORT": {
-      "description": "your group support link, can use private or public group, example https://t.me/solidprojects_chat",
-      "required": false,
-      "value": "https://t.me/solidprojects_chat"
-    },
-    "CHANNEL": {
-      "description": "your channel support link, can use private or public channel, example https://t.me/solidprojects",
-      "required": false,
-      "value": "https://t.me/solidprojects"
-    },
-    "UPSTREAM_REPO": {
-      "description": "fill it if you fork from original repo",
-      "required": false,
-      "value": "https://github.com/DoellBarr/solidmusic"
-    }
-  },
-  "buildpacks": [
     {
       "url": "heroku/python"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     }
   ]
 }
