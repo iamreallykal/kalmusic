@@ -1,7 +1,7 @@
 {
     "name": "kalmusic",
     "logo": "https://telegra.ph/file/73cbefa8401982900fe81.jpg",
-    "description": "KennedyX Music allow you to stream music trought the telegram voice chat feature.",
+    "description": "kalmusic allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
     "repository": "https://github.com/iamreallykal/kalmusic",
     "stack": "container",
